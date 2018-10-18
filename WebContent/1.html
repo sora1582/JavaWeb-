@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script language = "javascript">
+		function validate(f){
+			var value = f.email.value;
+			if(! /^\w+@\+.\w+$/.test(value)){
+				alert("email输入格式不正确");
+				f.email.fouce();
+				f.email.select();
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<form action = "" method = "post" name = "myform" onSubmit = "return validate(this)">
+		EMAIL:<input type = "text" name ="email">
+		<input type = "submit" value = "提交">
+	</form> 
+	
+</body>
+</html>

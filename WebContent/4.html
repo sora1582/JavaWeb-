@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type = "text/javascript">
+		function addrow(){
+			var tab = document.getElementById("mytab");	//我去，傻了吗，ById你之前还不写id????
+			var id = document.getElementById("id").value;
+			var name = document.getElementById("name").value;
+			var tr = document.createElement("tr");
+			var tbody = document.createElement("tbody");
+			var td_id = document.createElement("td");
+			var td_name = document.createElement("td");
+			td_id.appendChild(document.createTextNode(id));
+			td_name.appendChild(document.createTextNode(name));
+			tr.appendChild(td_id);
+			tr.appendChild(td_name);
+			tbody.appendChild(tr);
+			tab.appendChild(tbody);
+			
+		}
+	
+	</script>
+
+</head>
+<body>
+	新的编号：<input type = "text" name = "id" id = "id">
+	新的姓名：<input type = "text" name = "name" id = "name">
+	<input type = "button" value = "增加" onClick = "addrow()">
+	<table id = "mytab" border = "1">
+		<tr>
+			<td>编号</td>
+			<td>姓名</td>
+		</tr>
+	</table>
+</body>
+</html>

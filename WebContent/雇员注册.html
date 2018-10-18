@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type = "text/javascript">
+		function fun(f){
+			var value1 = f.userid.value;
+			var value2 = f.username.value;
+			var value3 = f.userjob.value;
+			var value4 = f.userdate.value;
+			var value5 = f.userwage.value;
+			var value6 = f.userbonus.value;
+			
+			if(!/^\d+$/ .test(value1)){
+				alert("员工编号是数字");
+				f.userid.foucs();
+				f.userid.select();
+				return false;
+			}
+			
+			if(value2 == ""){
+				alert("名字不能为空");
+				f.username.foucs();
+				f.username.select();
+				return false;
+			}
+			
+			if(value3 == ""){
+				alert("工作不能为空");
+				f.userjob.foucs();
+				f.userjob.select();
+				return false;
+			}
+			
+			if(!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(value4)){
+				alert("日期格式不正确");
+				f.userdate.focus();
+				f.userdate.select();
+				return false;
+			}
+			
+			if(!/^\d+\.\d+$/.test(value5)){
+				alert("工资格式不对");
+				f.userwage.focus();
+				f.userwage.select();
+				return false;
+			}
+			
+			if(!/^\d+\.\d+$/.test(value6)){
+				alert("奖金是小数");
+				f.userbonus.focus();
+				f.userbonus.select();
+				return false;
+			}
+			return true;
+			
+		}
+	</script>
+</head>
+<body>
+	<form action = "" method = "post" onSubmit = "return fun(this)">
+		雇员编号<input type = "text" name = "userid" value = "20090112" size = "10" maxlength = "10">
+		<br/>
+		雇员姓名<input type = "text" name = "username" value = "王王">
+		<br/>
+		雇员工作<input type = "text"  name = "userjob" value = "java开发软件工程师">
+		<br/>
+		雇佣日期<input type = "text" name = "userdate" value = "2018-09-02">
+		<br/>
+		基本工资<input type = "text" name = "userwage" value = "5000.0">
+		<br/>
+		奖&nbsp;&nbsp;金<input type = "text" name = "userbonus" value = "500.0">
+		<br/>
+		<input type = "submit" value = "提交">
+		<input type = "reset" value = "重置">
+	</form>
+</body>
+</html>
